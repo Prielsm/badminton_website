@@ -1,0 +1,27 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 20px;
+  h1{
+    font-size: 40px;
+    font-weight: 100;
+  }
+}
+
+.line {
+  flex-grow: 1;
+  height: 0.5px;
+  background-color: black;
+  position: relative;
+}
+
+.line2 {
+  position: absolute;
+  height: 0.5px;
+  background-color: black;
+  width: 100%;
+  top: 7px;
+  right: 0px;
+}

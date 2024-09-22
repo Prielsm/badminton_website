@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+/* ALL */
+.main {
+  padding: 5vw;
+  background-color: colors(white);
+}
+
+/* HOME */
+.more {
+  text-align: end;
+  font-weight: 400;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    transform: translateX(5px);
+  }
+}
+
+/* A PROPOS */
+.main_section {
+  margin-bottom: 150px;
+}
+.map {
+  width: 100%;
+  margin: 20px 0;
+}
+.blue {
+  color: colors(primary, base);
+  font-weight: 600;
+}
+.text {
+  width: 50%;
+  margin-left: auto;
+  padding: 2rem;
+}
+.containerImg {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  margin: 50px 0;
+  img {
+    width: 45%;
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+    -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+    border-radius: 10px;
+  }
+}

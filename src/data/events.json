@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Souper de Noël",
+    "subtitle": "Rassemblement pour fêter Noël entre membres",
+    "type": "souper",
+    "dates": [
+      "2012-04-23T18:25:43.511Z"
+    ],
+    "resume": "Les Fous du Volant organise son repas de Noël suivi d'une soirée dansante le samedi 14 décembre, convivialité, bonne ambiance, nombreuses animations et très bon repas de prévu ! Venez faire la fête et inscrivez-vous rapidement, seulement 80 places disponible ! Toutes les informations sur le flyer téléchargeable ci-dessous !",
+    "src": "/images/events/souperNoel.jpg",
+    "adresse": "Chemin du Sart, 24B 7900 Leuze-en-Hainaut"
+  },
+  {
+    "title": "Fermeture exceptionnelle",
+    "subtitle": "La salle fermera ses portes. Pas de cours ni de jeux libres ces jours là",
+    "type": "fermeture",
+    "dates": [
+      "2012-04-23T18:25:43.511Z",
+      "2012-04-24T18:25:43.511Z"
+    ],
+    "resume": "Le centre éducatif saint pierre fera des travaux et remplacera le toit de la salle, les travaux s'effectueront durant une semaine.",
+    "src": "/images/events/fermeture.jpeg"
+  },
+  {
+    "title": "Tournoi jeunes",
+    "subtitle": "Notre club vous invite à son tournoi amical jeunes",
+    "type": "tournoi",
+    "startingTime": "2012-04-23T09:00:00.511Z",
+    "endingTime": "2012-04-23T19:00:00.511Z",
+    "resume": "Comme chaque année, le club les Fous du Volant organise un tournoi de badminton qui est ouvert à tous les jeunes inscrits ou non au club, par équipe de deux joueurs. Que vous soyez des professionnels du lancer du volant ou que vous ayez simplement envie de brûler des calories dans une ambiance conviviale et dynamique, ne tardez plus à vous inscrire avec votre coéquipier",
+    "src": "/images/events/tournoi.jpg"
+  }
+]

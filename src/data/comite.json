@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Caroline",
+    "role": "Trésorier",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  },
+  {
+    "name": "Jean-Louis",
+    "role": "Président",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  },
+  {
+    "name": "Marc",
+    "role": "Organisateur",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  },
+  {
+    "name": "Léonie",
+    "role": "Secrétaire",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  },
+  {
+    "name": "Bryan",
+    "role": "Vice-président",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  },
+  {
+    "name": "Corentin",
+    "role": "Administratrice",
+    "phone": "0476/565667",
+    "email": "caroline.baudry@gmail.com",
+    "image": "/images/comite/user.jpg"
+  }
+]

@@ -1,0 +1,56 @@
+@import '../../styles/variables.scss';
+
+.introContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 50px;
+  column-gap: 50px;
+  padding: 100px 0;
+}
+
+.introSlogo {
+  p {
+    font-family:  $font-family-title;
+    font-size: 60px;
+    line-height: 136%;
+  }
+  width: 30%;
+  min-width: 360px;
+}
+
+
+.intoText {
+  position: relative;
+  color: #666;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  line-height: 28px;
+  width: 500px;
+  padding: 0 40px;
+  margin: 0 30px;
+}
+
+.guillemetD, .guillemetG {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+}
+
+.guillemetD {
+  bottom: -15px;
+  right: -30px;
+}
+
+.guillemetG {
+  top: -15px;
+  left: -30px;
+}
+
+@media screen and (max-width: 768px) {
+  .introContainer {
+    padding: 50px 0;
+  }
+  
+}
