@@ -3,16 +3,17 @@
 .hero-container {
   position: relative;
   background: url('../../../public/images/badminton4.png') center center/cover no-repeat;
+  background-attachment: fixed;
   height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: colors(text, inverse);
+  color: colors(white);
   overflow: hidden;
   
-  // Overlay moderne avec gradient
+  // Overlay moderne plus contrasté
   &::before {
     content: '';
     position: absolute;
@@ -20,7 +21,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    @include gradient-hero;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.75) 100%);
     z-index: 1;
   }
   
@@ -33,30 +34,42 @@
 
 .hero-container > h1 {
   font-family: $font-family-title;
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: map-get($font-weight, black);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: map-get($font-weight, extrabold);
   text-align: center;
   margin-bottom: 1rem;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: colors(white);
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.8),
+    0 4px 8px rgba(0, 0, 0, 0.6),
+    0 8px 16px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.02em;
   line-height: map-get($line-height, tight);
   
+  // Contour pour plus de contraste
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+  
   // Animation d'entrée
-  animation: slideInUp 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 0.3s forwards;
 }
 
 .hero-container > p {
   font-family: $font-family-base;
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-weight: map-get($font-weight, medium);
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: map-get($font-weight, normal);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   opacity: 0.95;
   max-width: 600px;
   line-height: map-get($line-height, relaxed);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   
   // Animation d'entrée décalée
-  animation: slideInUp 0.8s ease-out 0.2s both;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 0.6s forwards;
 }
 
 .hero-btns {
@@ -65,28 +78,50 @@
   flex-wrap: wrap;
   justify-content: center;
   
-  // Animation d'entrée décalée
-  animation: slideInUp 0.8s ease-out 0.4s both;
+  // Animation d'entrée décalée pour les boutons
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 0.9s forwards;
 }
 
 .hero-btns .btn {
   cursor: pointer;
-  font-family: $font-family-accent;
-  font-weight: map-get($font-weight, semibold);
-  font-size: font-size(button);
   padding: 0.875rem 2rem;
-  border-radius: 50px;
+  border-radius: 8px;
   border: none;
+  font-family: $font-family-accent;
+  font-weight: map-get($font-weight, bold);
+  font-size: font-size(button);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  @include shadow-lg;
   
-  &:hover {
-    transform: translateY(-3px);
-    @include shadow-xl;
+  // Amélioration du contraste pour le bouton info (sombre)
+  &.btn--outline,
+  &[class*="outline"] {
+    background: rgba(255, 255, 255, 0.15);
+    color: colors(white);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: colors(white);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+  }
+  
+  // Pour les autres boutons (colorés)
+  &:not(.btn--outline):not([class*="outline"]) {
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      filter: brightness(1.1);
+    }
   }
   
   &:active {
@@ -94,8 +129,18 @@
   }
 }
 
-// Animations d'entrée
-@keyframes slideInUp {
+.fa-play-circle {
+  margin-left: 8px;
+  font-size: 1.1em;
+  transition: transform 0.3s ease;
+}
+
+.hero-btns .btn:hover .fa-play-circle {
+  transform: translateX(2px);
+}
+
+// Animations
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -104,11 +149,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fa-play-circle {
-  margin-left: 8px;
-  font-size: 1.1em;
 }
 
 // Responsive moderne
@@ -121,7 +161,7 @@
 @include media-query(tablet) {
   .hero-container {
     padding: 4rem 2rem;
-    min-height: 70vh;
+    background-attachment: scroll; // Meilleur pour mobile
   }
   
   .hero-btns {
@@ -129,7 +169,7 @@
   }
   
   .hero-btns .btn {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     font-size: font-size(small);
   }
 }
@@ -137,7 +177,8 @@
 @include media-query(phone) {
   .hero-container {
     padding: 3rem 1rem;
-    min-height: 60vh;
+    min-height: 80vh;
+    background-attachment: scroll;
     text-align: center;
   }
   
@@ -145,7 +186,7 @@
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
   }
   
   .hero-btns .btn {

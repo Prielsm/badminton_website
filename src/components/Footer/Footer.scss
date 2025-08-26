@@ -1,0 +1,230 @@
+@import "../../styles/variables.scss";
+
+.footer-container {
+  background: colors(dark);
+  color: colors(text, inverse);
+  font-family: $font-family-base;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  
+  @include media-query(tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem 1.5rem;
+    
+    .footer-main {
+      grid-column: 1 / -1;
+    }
+  }
+  
+  @include media-query(phone) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+  }
+}
+
+// Section principale (logo + description)
+.footer-main {
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    
+    @include media-query(phone) {
+      justify-content: center;
+    }
+    
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    
+    span {
+      font-family: $font-family-title;
+      font-size: font-size(h4);
+      font-weight: map-get($font-weight, semibold);
+      color: colors(text, inverse);
+    }
+  }
+  
+  p {
+    font-size: font-size(base);
+    line-height: map-get($line-height, relaxed);
+    color: colors(grey, light);
+    margin: 0;
+    max-width: 300px;
+    
+    @include media-query(phone) {
+      max-width: none;
+    }
+  }
+}
+
+// Sections standard
+.footer-section {
+  h4 {
+    font-family: $font-family-title;
+    font-size: font-size(h6);
+    font-weight: map-get($font-weight, semibold);
+    color: colors(text, inverse);
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Liens rapides
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  
+  a {
+    color: colors(grey, light);
+    text-decoration: none;
+    font-size: font-size(base);
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: colors(primary, light);
+    }
+  }
+}
+
+// Section contact compacte
+.contact-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  
+  @include media-query(phone) {
+    justify-content: center;
+  }
+  
+  i {
+    color: colors(primary, base);
+    font-size: font-size(base);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  
+  a, span {
+    color: colors(grey, light);
+    text-decoration: none;
+    font-size: font-size(small);
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: colors(primary, light);
+    }
+  }
+}
+
+// Footer bottom simplifié
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(colors(grey, light), 0.1);
+  padding: 1.25rem 0;
+}
+
+.footer-bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  @include media-query(tablet) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+  
+  @include media-query(phone) {
+    padding: 0 1rem;
+    text-align: center;
+  }
+  
+  span {
+    color: colors(grey, light);
+    font-size: font-size(small);
+  }
+}
+
+// Icônes sociales simplifiées
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(colors(grey, light), 0.1);
+    color: colors(grey, light);
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: font-size(base);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: colors(primary, base);
+      color: colors(text, inverse);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Responsive optimisé
+@include media-query(desktop) {
+  .footer-content {
+    padding: 4rem 2rem 2.5rem;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 1.5rem 1rem 1rem;
+    gap: 1.25rem;
+  }
+  
+  .footer-main .footer-logo span {
+    font-size: font-size(h5);
+  }
+  
+  .footer-section h4 {
+    font-size: font-size(base);
+    margin-bottom: 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}

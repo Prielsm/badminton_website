@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "Read(/c:\\Users\\mrl\\OneDrive - Contraste Europe\\Documents\\Work\\Site badminton\\images/**)"
     ],
     "deny": [],
     "ask": []
