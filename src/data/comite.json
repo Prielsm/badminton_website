@@ -1,44 +1,50 @@
 [
   {
-    "name": "Caroline",
-    "role": "Trésorier",
-    "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
-  },
-  {
-    "name": "Jean-Louis",
+    "firstName": "Jean-Louis",
+    "lastName": "Durand", 
     "role": "Président",
-    "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
+    "phone": "0472/123456",
+    "email": "jl.durand@badminton-club.be",
+    "image": "/images/comite/president.jpg"
   },
   {
-    "name": "Marc",
-    "role": "Organisateur",
-    "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
-  },
-  {
-    "name": "Léonie",
-    "role": "Secrétaire",
-    "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
-  },
-  {
-    "name": "Bryan",
+    "firstName": "Bryan",
+    "lastName": "Martinez",
     "role": "Vice-président",
-    "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
+    "phone": "0475/789123",
+    "email": "b.martinez@badminton-club.be", 
+    "image": "/images/comite/vice-president.jpg"
   },
   {
-    "name": "Corentin",
-    "role": "Administratrice",
+    "firstName": "Caroline",
+    "lastName": "Baudry",
+    "role": "Trésorière",
     "phone": "0476/565667",
-    "email": "caroline.baudry@gmail.com",
-    "image": "/images/comite/user.jpg"
+    "email": "c.baudry@badminton-club.be",
+    "image": "/images/comite/tresoriere.jpg"
+  },
+  {
+    "firstName": "Léonie",
+    "lastName": "Lambert",
+    "role": "Secrétaire",
+    "phone": "0478/345678",
+    "email": "l.lambert@badminton-club.be",
+    "image": "/images/comite/secretaire.jpg"
+  },
+  {
+    "firstName": "Marc",
+    "lastName": "Rousseau",
+    "role": "Responsable événements",
+    "phone": "0479/987654",
+    "email": "m.rousseau@badminton-club.be",
+    "image": "/images/comite/responsable-events.jpg"
+  },
+  {
+    "firstName": "Corentin",
+    "lastName": "Moreau",
+    "role": "Responsable communication",
+    "phone": "0471/456789",
+    "email": "c.moreau@badminton-club.be",
+    "image": "/images/comite/responsable-com.jpg"
   }
 ]

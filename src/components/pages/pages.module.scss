@@ -33,6 +33,9 @@
   width: 50%;
   margin-left: auto;
   padding: 2rem;
+  @include media-query(phone) {
+    width: 100%;
+  }
 }
 .containerImg {
   display: flex;

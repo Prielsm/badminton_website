@@ -45,18 +45,42 @@ $breakpoints: (
 }
 
 $colors: (
-  // primary:                         #57B6E1,
+  // Palette moderne sportive avec des couleurs dynamiques
   primary:
     (
-      base: #57b6e1,
-      light: #8ec7e1,
-      lighter: #d3dee3,
+      base: #00B4D8, // Bleu électrique moderne
+      light: #48CAE4, // Bleu clair dynamique
+      lighter: #90E0EF, // Bleu très clair
+      dark: #0077B6, // Bleu foncé intense
     ),
-  secondary: #e98a15,
-  white: #fafafa,
-  grey: #878a96,
-  dark: #0c1b33,
-  black: #0000
+  secondary: #FF5722, // Orange énergique sportif
+  accent: #4CAF50, // Vert succès/performance
+  warning: #FFB300, // Jaune dynamique
+  danger: #F44336, // Rouge intense
+  
+  // Couleurs neutres modernes
+  white: #FFFFFF,
+  background: #F8FAFC, // Gris très clair moderne
+  surface: #FFFFFF,
+  grey: 
+    (
+      base: #64748B, // Gris moderne
+      light: #94A3B8, // Gris clair
+      lighter: #E2E8F0, // Gris très clair
+      dark: #475569, // Gris foncé
+    ),
+  dark: #0F172A, // Noir moderne
+  text:
+    (
+      primary: #1E293B, // Texte principal
+      secondary: #64748B, // Texte secondaire
+      inverse: #FFFFFF, // Texte sur fond foncé
+    ),
+  
+  // Couleurs d'action modernes
+  success: #10B981,
+  info: #06B6D4,
+  black: #000000
 );
 
 // Font
@@ -70,66 +94,95 @@ $colors: (
   font-family: Baskervville;
   src: url(../../public/fonts/Baskervville/Baskervville-Regular.ttf);
 }
-// Base font family
-$font-family-base: "Lato", sans-serif;
-// Title font family
-$font-family-title: "Baskervville", serif;
+// Modern font families for sports websites
+$font-family-base: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+// Title font family - moderne et impactant
+$font-family-title: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+// Font family for accents and CTAs
+$font-family-accent: "Montserrat", sans-serif;
 
 @function font-size($size) {
   @return map-get($font-size, $size);
 }
-// Font size
+// Font size - échelle moderne et lisible
 $font-size: (
-  section: 3rem,
+  hero: 4rem, // Pour les gros titres Hero
+  section: 3rem, // Titres de sections
   h1: 2.5rem,
   h2: 2rem,
-  h3: 1.7rem,
+  h3: 1.75rem,
   h4: 1.5rem,
-  h5: 1.2rem,
-  h6: 1.1rem,
-  aside: 0.9rem,
-  base: 1rem,
-  small: 0.75rem,
-  extrasmall: 0.6rem,
-  article: 1.15rem,
-  article-xs: 1.1rem,
+  h5: 1.25rem,
+  h6: 1.125rem,
+  large: 1.125rem, // Texte large
+  base: 1rem, // Texte de base
+  small: 0.875rem, // Texte petit
+  extrasmall: 0.75rem, // Très petit texte
+  caption: 0.75rem, // Légendes
+  button: 0.875rem, // Boutons
+  nav: 0.9rem, // Navigation
+  icon: 1rem, // Icônes
+  aside: 0.875rem,
+  article: 1.125rem,
+  article-xs: 1rem,
   alt: 1rem,
-  nav: 0.9rem,
-  button: 0.9rem,
-  icon: 0.7rem,
 );
 
-// Line height
+// Line height - optimisé pour la lisibilité moderne
 $line-height: (
-  base: 1.4,
-  h1: 1.2,
-  h2: 1.35,
-  h3: 1.35,
-  h4: 1.35,
-  h5: 1.35,
-  h6: 1.35,
-  alt: 1.35,
-  nav: 28px,
-  small: 1.3,
+  tight: 1.25, // Titres serrés
+  snug: 1.375, // Titres moyens
+  normal: 1.5, // Texte normal
+  relaxed: 1.625, // Texte aéré
+  loose: 2, // Texte très aéré
+  base: 1.5,
+  h1: 1.1,
+  h2: 1.2,
+  h3: 1.3,
+  h4: 1.4,
+  h5: 1.4,
+  h6: 1.4,
+  alt: 1.4,
+  nav: 1.5,
+  small: 1.4,
 );
 
-// Font weight
+// Font weight - hiérarchie moderne
 $font-weight: (
+  thin: 100,
+  extralight: 200,
+  light: 300,
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  black: 900,
   base: 400,
-  h1: 700,
-  h2: 300,
-  h3: 300,
-  h4: 300,
-  h5: 300,
-  h6: 300,
-  alt: 300,
-  nav: 300,
-  small: 300,
+  h1: 800, // Plus impactant
+  h2: 700,
+  h3: 600,
+  h4: 600,
+  h5: 500,
+  h6: 500,
+  alt: 400,
+  nav: 500,
+  small: 400,
+  button: 600, // Boutons plus marqués
 );
 
-// z-index
+// z-index - échelle moderne et organisée
 $z-index: (
+  behind: -1,
   base: 1,
+  dropdown: 10,
+  sticky: 20,
+  overlay: 30,
+  modal: 40,
+  popover: 50,
+  tooltip: 60,
+  navbar: 100,
+  toast: 1000,
   low: 50,
   medium: 100,
   high: 150,
@@ -199,9 +252,30 @@ $header-bottom-height: 35px;
   transition: $properties $duration $timing-function;
 }
 
-// Mixin pour ajouter une ombre
+// Mixin pour ajouter une ombre moderne
 @mixin box-shadow($shadow) {
   box-shadow: $shadow;
+}
+
+// Shadows modernes pour sites sportifs
+@mixin shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@mixin shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@mixin shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+@mixin shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 // Mixin pour définir une couleur de fond avec opacité
@@ -212,6 +286,19 @@ $header-bottom-height: 35px;
 // Mixin pour ajouter une bordure arrondie
 @mixin border-radius($radius) {
   border-radius: $radius;
+}
+
+// Gradient moderne pour sites sportifs
+@mixin gradient-primary {
+  background: linear-gradient(135deg, colors(primary, base) 0%, colors(primary, light) 100%);
+}
+
+@mixin gradient-secondary {
+  background: linear-gradient(135deg, colors(secondary) 0%, colors(warning) 100%);
+}
+
+@mixin gradient-hero {
+  background: linear-gradient(135deg, rgba(colors(primary, dark), 0.9) 0%, rgba(colors(primary, base), 0.8) 100%);
 }
 
 // Exemple d'intégration

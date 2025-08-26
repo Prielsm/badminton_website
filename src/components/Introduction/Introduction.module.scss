@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .introContainer {
   display: flex;
@@ -7,19 +7,18 @@
   align-items: center;
   row-gap: 50px;
   column-gap: 50px;
-  padding: 100px 0;
+  padding-bottom: 100px;
 }
 
 .introSlogo {
   p {
-    font-family:  $font-family-title;
+    font-family: $font-family-title;
     font-size: 60px;
     line-height: 136%;
   }
   width: 30%;
   min-width: 360px;
 }
-
 
 .intoText {
   position: relative;
@@ -32,7 +31,8 @@
   margin: 0 30px;
 }
 
-.guillemetD, .guillemetG {
+.guillemetD,
+.guillemetG {
   position: absolute;
   height: 30px;
   width: 30px;
@@ -52,5 +52,4 @@
   .introContainer {
     padding: 50px 0;
   }
-  
 }

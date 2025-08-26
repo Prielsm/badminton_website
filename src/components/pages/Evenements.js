@@ -1,12 +1,19 @@
-import React from 'react'
-import '../../App.scss'
+import React from "react";
+import "../../App.scss";
+import style from "./pages.module.scss";
+import Title from "../Title/Title";
+import events from "../../data/events.json";
+import Cards from "../Cards/Cards";
 
 function Evenements() {
   return (
-    <h1 className='evenements'>
-      Evenements
-    </h1>
-  )
+    <main className={style.main}>
+      <section className={style.main_section}>
+        <Title name="Evénements" />
+        <Cards data={events} />
+      </section>
+    </main>
+  );
 }
 
-export default Evenements
+export default Evenements;

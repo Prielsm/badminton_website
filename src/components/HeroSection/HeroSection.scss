@@ -1,74 +1,155 @@
 @import '../../styles/variables.scss';
 
 .hero-container {
+  position: relative;
   background: url('../../../public/images/badminton4.png') center center/cover no-repeat;
-  background-attachment: fixed;
   height: calc(100vh - 80px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 0 100% rgba(0,0,0,0.2);
-  object-fit: contain;
-  color: colors(white);
+  color: colors(text, inverse);
+  overflow: hidden;
+  
+  // Overlay moderne avec gradient
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include gradient-hero;
+    z-index: 1;
+  }
+  
+  // Contenu au-dessus de l'overlay
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
-
 .hero-container > h1 {
-  font-size: 100px;
-  text-shadow: 1px 1px 2px #404040;
+  font-family: $font-family-title;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: map-get($font-weight, black);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+  line-height: map-get($line-height, tight);
+  
+  // Animation d'entrée
+  animation: slideInUp 0.8s ease-out;
 }
 
 .hero-container > p {
-  margin-top: 8px;
-  font-size: 32px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: $font-family-base;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: map-get($font-weight, medium);
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  line-height: map-get($line-height, relaxed);
+  
+  // Animation d'entrée décalée
+  animation: slideInUp 0.8s ease-out 0.2s both;
 }
 
-.hero-btns{
-  margin-top: 32px;
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  // Animation d'entrée décalée
+  animation: slideInUp 0.8s ease-out 0.4s both;
 }
 
 .hero-btns .btn {
   cursor: pointer;
-  margin: 6px;    
+  font-family: $font-family-accent;
+  font-weight: map-get($font-weight, semibold);
+  font-size: font-size(button);
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  @include shadow-lg;
+  
+  &:hover {
+    transform: translateY(-3px);
+    @include shadow-xl;
+  }
+  
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+// Animations d'entrée
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fa-play-circle {
-  margin-left: 4px;
+  margin-left: 8px;
+  font-size: 1.1em;
 }
 
-
-@media screen and (max-width: 960px) {
-  .hero-container > h1 {
-    font-size: 70px;
-  }
-}
-
-@media screen and (max-width: 768px) {
+// Responsive moderne
+@include media-query(desktop) {
   .hero-container {
-    height: auto;
-    padding: 50px 20px;
+    min-height: calc(100vh - 80px);
   }
+}
 
-  .hero-container > h1 {
-    font-size: 50px;
+@include media-query(tablet) {
+  .hero-container {
+    padding: 4rem 2rem;
+    min-height: 70vh;
+  }
+  
+  .hero-btns {
+    gap: 0.75rem;
+  }
+  
+  .hero-btns .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: font-size(small);
+  }
+}
+
+@include media-query(phone) {
+  .hero-container {
+    padding: 3rem 1rem;
+    min-height: 60vh;
     text-align: center;
   }
-
-  .hero-container >p {
-    font-size: 30px;  
-  }
-
-  .btn-mobile {
-    display: block;
-    text-decoration: none;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
   
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .hero-btns .btn {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
 }

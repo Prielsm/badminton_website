@@ -1,31 +1,26 @@
 import React from "react";
+import style from "./Table.module.scss";
 
-function HoraireTable(infos) {
+function HoraireTable({ infos }) {
   return (
     <table className="table">
       <thead>
-        <tr>
+        <tr className={style.head}>
           <th scope="col">Jours</th>
           <th scope="col">Heures</th>
           <th scope="col">Remarques</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Lundi</td>
-          <td>19h00 - 22h00</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Mardi</td>
-          <td>19h00 - 21h00</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Dimanche</td>
-          <td>10h00 - 13h00</td>
-          <td>Buvette ouverte jusque 14h</td>
-        </tr>
+        {infos.map((i) => (
+          <tr key={i.id}>
+            <td>{i.day}</td>
+            <td>
+              {i.start} - {i.end}
+            </td>
+            <td>{i.details}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

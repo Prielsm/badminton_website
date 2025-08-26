@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.container {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.cards_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  
+  @include media-query(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  @include media-query(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  @include media-query(phone) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "day": "Lundi",
+    "start": "19h00",
+    "end": "22h00",
+    "details": "-"
+  },
+  {
+    "id": 2,
+    "day": "Mardi",
+    "start": "19h00",
+    "end": "21h00",
+    "details": "-"
+  },
+  {
+    "id": 3,
+    "day": "Dimanche",
+    "start": "10h00",
+    "end": "13h00",
+    "details": "Buvette ouverte jusque 14h"
+  }
+]
